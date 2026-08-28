@@ -1,4 +1,4 @@
-from DataStructures.List import array_list as lt
+from DataStructures.List import single_linked_list as lt
 
 
 def new_stack():
@@ -8,13 +8,17 @@ def new_stack():
 
 def push(my_stack, element):
     """Agrega un elemento en el tope de la pila."""
-    lt.add_last(my_stack, element)
+    lt.add_first(my_stack, element)
     return my_stack
 
 
 def pop(my_stack):
     """Retira y retorna el elemento del tope de la pila."""
-    return lt.remove_last(my_stack)
+    if lt.is_empty(my_stack):
+        raise Exception("EmptyStructureError: stack is empty")
+    element = lt.get_element(my_stack, 0)
+    lt.remove_first(my_stack)
+    return element
 
 
 def is_empty(my_stack):
@@ -24,7 +28,9 @@ def is_empty(my_stack):
 
 def top(my_stack):
     """Retorna el elemento del tope sin retirarlo de la pila."""
-    return lt.last_element(my_stack)
+    if lt.is_empty(my_stack):
+        raise Exception("EmptyStructureError: stack is empty")
+    return lt.first_element(my_stack)
 
 
 def size(my_stack):

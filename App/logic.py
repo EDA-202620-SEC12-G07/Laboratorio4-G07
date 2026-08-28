@@ -181,7 +181,7 @@ def add_book_author(catalog, author_name, book):
     """
     authors = catalog['authors']
     pos_author = lt.is_present(authors, author_name, compare_authors)
-    if pos_author > 0:
+    if pos_author >= 0:
         author = lt.get_element(authors, pos_author)
     else:
         author = new_author(author_name)
