@@ -140,6 +140,7 @@ dmypy.json
 *.zip
 !Data/GoodReads/books.csv
 !Data/GoodReads/book_reviews.csv
+!Data/GoodReads/*.csv
 !Data/books.csv
 !Data/category-id.csv
 !Data/videos-small.csv
